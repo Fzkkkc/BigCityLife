@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class cameraSpeed : MonoBehaviour
 {
+    public float speedcam;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class cameraSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(0.01f, 0, 0));
+        transform.Translate(Vector2.right * speedcam * Time.deltaTime);
     }
 }
