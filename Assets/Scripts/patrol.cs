@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class patrol : MonoBehaviour
 {
+    public int health = 1;
 
     public float speed;
     public float distance;
-
+    
     private bool movingRight = true;
 
     public Transform groundDetection;
 
     void Start()
     {
-        
+
     }
 
     
@@ -39,4 +40,23 @@ public class patrol : MonoBehaviour
         }
 
     }
+
+    public void takeDamage(int damage)
+    {
+
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
+   
+
 }
